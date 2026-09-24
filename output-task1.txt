@@ -1,0 +1,48 @@
+Task 1a: SHA256 hashes of arbitrary inputs
+
+Input: Hello, World! -> SHA256 Hash: dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f
+
+Input: Python -> SHA256 Hash: 18885f27b5af9012df19e496460f9294d5ab76128824c6f993787004f6d9a7db
+
+Input: Cryptography -> SHA256 Hash: b584eec728548aced5a66c0267dd520a00871b5e7b735b2d8202f86719f61857
+
+
+Task 1b: Strings with Hamming distance of 1
+
+Base: bytearray(b'o71be8hj39'), Modified: bytearray(b'o71be8hj3;')
+Base Hash: b5d3cc2b668bc5566eb277e7a6675f1acfd8c6ad058a958024a42c915faaa18c, Modified Hash: b22cc11f6070510e154df727233aabb9bb628a302e0148013746cb1143bce4ad
+
+Base: bytearray(b'b6v4tyqol0'), Modified: bytearray(b'b6v4tyqoh0')
+Base Hash: 1dac974ee2192249470e00e668c7414483a19c51cbc4f5210a2f9291a2b363de, Modified Hash: 98254373007ae6be922eaeb098bb20fe65952fceacaee41400859feb5c32b8b2
+
+Base: bytearray(b'1774rqm429'), Modified: bytearray(b'1774rqm42;')
+Base Hash: b9c7016724688f61b2e368a0e593991df4b0c20201f8470c9621d5a3fdb5aa69, Modified Hash: 1e552a40072425ca25476db2139b903c92ae6ce716e73a55dcc10ef502f5357a
+
+
+Task 1c: Finding collisions for truncated hashes
+Collision found for 8 bits: rux0yj12c5 and s3lkkty5ff in 16 attempts, time taken: 0.000035 seconds
+Collision found for 10 bits: nsi99bw7iw and wf9rlyvq1w in 15 attempts, time taken: 0.000030 seconds
+Collision found for 12 bits: zwwf100jv4 and j2o9j2o8of in 71 attempts, time taken: 0.000129 seconds
+Collision found for 14 bits: aihjzjshqa and 232mvs8u3m in 53 attempts, time taken: 0.000092 seconds
+Collision found for 16 bits: 5kwn5nlao2 and xee0fmdv4u in 301 attempts, time taken: 0.000537 seconds
+Collision found for 18 bits: otfnk9ya68 and 0omt3nf1t8 in 284 attempts, time taken: 0.000491 seconds
+Collision found for 20 bits: tccewt16w2 and koq17v85pl in 1251 attempts, time taken: 0.002203 seconds
+Collision found for 22 bits: abujnnypbr and b2xjj9wnpp in 2222 attempts, time taken: 0.003836 seconds
+Collision found for 24 bits: hxn4cc6jh8 and 8bkce29eyr in 7628 attempts, time taken: 0.013337 seconds
+Collision found for 26 bits: g1mdk717z2 and l63pa4dkvg in 2778 attempts, time taken: 0.004785 seconds
+Collision found for 28 bits: 2fd4rrsgsv and oy7esksz3x in 29806 attempts, time taken: 0.048322 seconds
+Collision found for 30 bits: rxgvzkvuvy and o7t0xz3390 in 12712 attempts, time taken: 0.017045 seconds
+Collision found for 32 bits: 3sx21kocgh and q6mjk1zoib in 88995 attempts, time taken: 0.123507 seconds
+Collision found for 34 bits: x1vk1m6z4u and yzoidx83o4 in 33179 attempts, time taken: 0.044689 seconds
+Collision found for 36 bits: oinwmsx289 and 30asojh0jv in 431086 attempts, time taken: 0.603141 seconds
+Collision found for 38 bits: vd3mw4zeuu and 5kurxc6nyn in 147145 attempts, time taken: 0.199981 seconds
+Collision found for 40 bits: jplf4expvy and ta7vnlsnba in 1111689 attempts, time taken: 1.811467 seconds
+Collision found for 42 bits: d2xljv4zvh and hggunkl1jw in 629229 attempts, time taken: 1.296872 seconds
+Collision found for 44 bits: 821euf93ve and amu7axf023 in 5417757 attempts, time taken: 7.909652 seconds
+Collision found for 46 bits: irw1ocp5fg and phxb7eyknx in 3677719 attempts, time taken: 5.342704 seconds
+Collision found for 48 bits: fj70fdc3m3 and 7tt4vrpq3x in 10625949 attempts, time taken: 16.484961 seconds
+Collision found for 50 bits: bjfkhesvu1 and dudczog82v in 40030311 attempts, time taken: 62.980444 seconds
+
+Bits: [8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
+Times: [3.4529e-05, 2.9739e-05, 0.00012934, 9.2364e-05, 0.000537141, 0.000490855, 0.002203422, 0.003836394, 0.013336843, 0.004784612, 0.048321657, 0.017045248, 0.123506733, 0.044689212, 0.603141045, 0.19998138, 1.81146678, 1.296871925, 7.909651954, 5.342703925, 16.484960644, 62.980443617]
+Inputs: [('rux0yj12c5', 's3lkkty5ff'), ('nsi99bw7iw', 'wf9rlyvq1w'), ('zwwf100jv4', 'j2o9j2o8of'), ('aihjzjshqa', '232mvs8u3m'), ('5kwn5nlao2', 'xee0fmdv4u'), ('otfnk9ya68', '0omt3nf1t8'), ('tccewt16w2', 'koq17v85pl'), ('abujnnypbr', 'b2xjj9wnpp'), ('hxn4cc6jh8', '8bkce29eyr'), ('g1mdk717z2', 'l63pa4dkvg'), ('2fd4rrsgsv', 'oy7esksz3x'), ('rxgvzkvuvy', 'o7t0xz3390'), ('3sx21kocgh', 'q6mjk1zoib'), ('x1vk1m6z4u', 'yzoidx83o4'), ('oinwmsx289', '30asojh0jv'), ('vd3mw4zeuu', '5kurxc6nyn'), ('jplf4expvy', 'ta7vnlsnba'), ('d2xljv4zvh', 'hggunkl1jw'), ('821euf93ve', 'amu7axf023'), ('irw1ocp5fg', 'phxb7eyknx'), ('fj70fdc3m3', '7tt4vrpq3x'), ('bjfkhesvu1', 'dudczog82v')]
