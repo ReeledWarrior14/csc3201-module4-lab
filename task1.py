@@ -10,19 +10,10 @@ def sha256_hash(input_str: str) -> str:
     return hashlib.sha256(string).hexdigest()
 
 def truncate_hash(hash: str, bits: int) -> int:
-    # Take the first (bits / 4) characters of hash_string
-    truncated_hash = hash[: bits // 4]
-
-    # Convert this substring to an integer (base 16)
-    hash_int = int(truncated_hash, 16)
-
-    # Create a bitmask of 'bits' number of 1s
-    bitmask = (1 << bits) - 1
-
-    # Perform bitwise AND between the integer and the bitmask
-    result = hash_int & bitmask
-
-    return result
+    #convert hash to integer 
+    hash_to_int = int(hash, 16)
+    #start with 256-bit hash and shift everything except the starting bits
+    return hash_to_int >> (256-bits)
 
 def hamming_distance(s1, s2):
     if len(s1) != len(s2):
@@ -30,7 +21,7 @@ def hamming_distance(s1, s2):
     count = 0
     for c1, c2 in zip(s1, s2):
         if c1 != c2:
-            count += 1
+            count += (c1 ^ c2).bit_count()
     return count
 
 def find_hamming_distance_1():
@@ -66,7 +57,7 @@ def find_collision(bits, max_attempts=1000000000):
 
         if h in seen:
             end_time = time.perf_counter_ns() - now
-            return seen[h], s, attempts, end_time / 1e9
+            return seen[h], s, attempts + 1, end_time / 1e9
         else:
             seen[h] = s
 
@@ -97,6 +88,7 @@ def task_1c():
     bits = []
     times = []
     inputs = []
+    num_of_inputs = []
 
     for size in range(8, 51, 2):
         s1, s2, attempts, elapsed_time = find_collision(size)
@@ -105,12 +97,13 @@ def task_1c():
             bits.append(size)
             times.append(elapsed_time)
             inputs.append((s1, s2))
+            num_of_inputs.append(attempts)
         else:
             print(f"No collision found for {size} bits after {attempts} attempts, time taken: {elapsed_time:.6f} seconds")
 
     print(f"\nBits: {bits}")
     print(f"Times: {times}")
-    print(f"Inputs: {inputs}")
+    print(f"Number of inputs: {num_of_inputs}")
 
 
 def task_1_main():

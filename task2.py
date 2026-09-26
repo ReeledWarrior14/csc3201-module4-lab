@@ -62,7 +62,6 @@ def main():
 
     workers = multiprocessing.cpu_count()
     chunks = chunked(filtered_words, workers)
-
     results_summary = []
     start_total = time.time()
 
